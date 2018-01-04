@@ -9,9 +9,9 @@
 
         public function view($view, $data = array())
         {
-            require_once '../views/shared/header.php';
-            require_once '../views/' . $view . '.php';
-            require_once '../views/shared/footer.php';
+            require_once 'Views/shared/_header.php';
+            require_once 'Views/' . $view . '.php';
+            require_once 'Views/shared/_footer.php';
         }
     }
 ?>

@@ -1,9 +1,9 @@
 <?php
     class Home extends Controller
     {
-        public function inicio()
+        public function index()
         {
             $titulo = 'Home';
-            $this->view("inicio",array('header'=>$titulo));
+            $this->view("Home/inicio",array('header'=>$titulo));
         }
     }

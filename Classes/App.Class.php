@@ -7,16 +7,19 @@
 
         public function __construct()
         {
-            $file = $_POST['control'];
-            $metodo = $_POST['metodo'];
-            $parametros = $_POST['data'];
-
-            if(file_exists('../Controles/' . $file . '.Controller.php'))
+            if($_POST)
             {
-                $this->controller = $file;
+                $file = $_POST['control'];
+                $metodo = $_POST['metodo'];
+                $parametros = $_POST['data'];
+                if(file_exists('Controllers/' . $file . '.Controller.php'))
+                {
+                    $this->controller = $file;
+                }
+                $this->params = $parametros ? array_values($parametros) : array();
             }
-            
-            require_once '../Controles/' . $this->controller . '.Controller.php';
+
+            require_once 'Controllers/' . $this->controller . '.Controller.php';
 
             $this->controller = new $this->controller;
 
@@ -27,7 +30,7 @@
                     $this->method = $metodo;
                 }
             }
-            $this->params = $parametros ? array_values($parametros) : array();
+
             $metodo = array($this->controller,$this->method);
             call_user_func_array($metodo, $this->params);
         }
