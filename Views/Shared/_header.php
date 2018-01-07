@@ -26,6 +26,10 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="home">Inicio <span class="sr-only">(current)</span></a></li>
+                        <li class="Registrar"><a href="home">Registrar Socio <span class="sr-only">(current)</span></a></li>
+                        <li class="abono"><a href="home">Nuevo Abono <span class="sr-only">(current)</span></a></li>
+                        <li class="prestamo"><a href="home">Nuevo Prestamo <span class="sr-only">(current)</span></a></li>
+                        <li class="Cuota"><a href="home">Calcular Cuota <span class="sr-only">(current)</span></a></li>
                     </ul>
                     <form class="navbar-form navbar-left">
                         <div class="form-group">
@@ -33,19 +37,19 @@
                         </div>
                         <button type="submit" class="btn btn-default">Buscar</button>
                     </form>
-                <!--<ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Link</a></li>
                     <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a class="regitrar" href="#">Socios</a></li>
+                        <li><a class="" href="#">Reportes</a></li>
+                        <li><a class="" href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a class="" href="#">Separated link</a></li>
                     </ul>
                     </li>
-                </ul>-->
+                </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>

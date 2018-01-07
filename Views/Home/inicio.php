@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid col-lg-6 col-md-6 col-sm-6">
     <H1>Wellcome to the SiSePA Home page.</H1>
     <table class="table table-striped">
         <thead style="background: black; color: white;">
@@ -11,50 +11,15 @@
             </tr>
         </thead>
         <tbody>
+            <?php for($a = 0; $a < count($data['Asociados']); $a++){?>
             <tr>
+            <?php for($b = 0; $b < count($data['Asociados']); $b++){?>
                 <td>
-                    12/2/2017
+                    <? $data['Asociados'][$a][$b];?>
                 </td>
-                <td>
-                    Roberto Ramos Ramirez
-                </td>
-                <td>$ 35.00</td>
-                <td>$ 0.00</td>
-                <td>$ 0.03</td>
+            <?php } ?>
             </tr>
-            <tr>
-                <td>
-                    07/2/2017
-                </td>
-                <td>
-                    Roberto Ramos Ramirez
-                </td>
-                <td>$ 30.00</td>
-                <td>$ 25.00</td>
-                <td>$ 0.23</td>
-            </tr>
-            <tr>
-                <td>
-                    10/2/2017
-                </td>
-                <td>
-                    Roberto Ramos Ramirez
-                </td>
-                <td>$ 55.00</td>
-                <td>$ 0.00</td>
-                <td>$ 0.48</td>
-            </tr>
-            <tr>
-                <td>
-                    11/2/2017
-                </td>
-                <td>
-                    Roberto Ramos Ramirez
-                </td>
-                <td>$ 40.00</td>
-                <td>$ 0.00</td>
-                <td>$ 0.12</td>
-            </tr>
+            <?php } ?>
         </tbody>
     </table>
 </div>
