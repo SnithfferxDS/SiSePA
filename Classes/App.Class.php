@@ -9,30 +9,38 @@
         {
             if($_POST)
             {
-                $file = $_POST['control'];
-                $metodo = $_POST['metodo'];
-                $parametros = $_POST['data'];
-                if(file_exists('Controllers/' . $file . '.Controller.php'))
+                if(isset($_POST['control']))
                 {
-                    $this->controller = $file;
+                    $this->controller = $_POST['control'];
                 }
-                $this->params = $parametros ? array_values($parametros) : array();
-            }
+                else
+                {
+                    //redirect to error
+                }
 
+                if(isset($_POST['metodo']))
+                {
+                    $this->method = $_POST['metodo'];
+                }
+                if(isset($_POST['data']))
+                {
+                    $this->params = $_POST['data'];
+                }
+            }
+    
             require_once 'Controllers/' . $this->controller . '.Controller.php';
-
             $this->controller = new $this->controller;
-
-            if(isset($metodo))
+    
+            if(isset($this->method))
             {
-                if(method_exists($this->controller, $metodo))
+                if(method_exists($this->controller, $this->method))
                 {
-                    $this->method = $metodo;
+                    $this->params = $params ? array_values($params) : array();
+
+                    $metodo = array($this->controller,$this->method);
+                    call_user_func_array($metodo, $this->params);
                 }
             }
-
-            $metodo = array($this->controller,$this->method);
-            call_user_func_array($metodo, $this->params);
         }
     }
 ?>

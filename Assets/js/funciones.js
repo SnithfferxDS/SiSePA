@@ -17,20 +17,27 @@ function objetoAjax(){
 
 $(document).ready(function()
 {
-    $('.Registrar').click(fisher());
-    $('.abono').click(fisher());
-    $('.prestamo').click(fisher());
-    $('.Cuota').click(fisher());
+    $('.Registrar').click(fisher('registrador', 'index'));
+    $('.abono').click(fisher('abonar', 'index'));
+    $('.prestamo').click(fisher('presatar', 'index'));
+    $('.Cuota').click(calculador());
 });
 
-function fisher($controller, $method, $data){
+function fisher(controller, method, data){
     $.ajax({ 
-        url: 'sipimini/fido.php',
-        data: {controlador: 'seguimientos', metodo: 'index', datos:''},
+        url: '/Classes/App.Class.php',
+        data: {controlador: controller, metodo: method, datos:data},
         type: 'post',
         success: function(respuesta)
         {
             $("#section").html(respuesta);
         }
     });
+}
+
+function calculador()
+{
+    var capital
+    var acciones
+    
 }

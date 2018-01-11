@@ -77,7 +77,7 @@
             $mensaje = '';
             $error = '';
             $arreglo = array();
-            if($method == 'insertar')
+            if($method == 'insert')
             {
                 $consulta = $conexion->consulta("INSERT INTO $table $fields VALUES($values)");
                 if(mysql_affected_rows($consulta) > 0)
@@ -103,6 +103,18 @@
                 else
                 {
                     $error = "No hay nada en la tabla.";
+                }
+            }
+            elseif($method == 'delete')
+            {
+                $consulta = $conexion->consulta("UPDATE $table SET activo = false WHERE id = $id");
+                if(mysql_num_rows($consulta) > 0)
+                {
+                    $mensaje = "Los registros en la tabla: " . $table . "; han sido eliminados.";
+                }
+                else
+                {
+                    $error = "No se ha encontrado el registro en la tabla. " . $table;
                 }
             }
 
