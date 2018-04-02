@@ -27,6 +27,35 @@
         {
             $db = new $this->conexion;
             $declaracionPDO = $db->prepare($cadena);
-        }    
+        }
+        public function Custom_Query($query)
+        {
+          $tipo = $explode(' ',$query);
+          $conector = new $this->conexion;
+          if($tipo == 'select')
+          {
+            $conector->query($query);
+          }
+          elseif($tipo == 'insert')
+          {
+            $conector->query($query);
+            $filas = $conexion->row_affected();
+            $id = $conexion->lastinsert();
+          }
+          elseif($tipo == 'update')
+          {
+            $conector->query($query);
+            $filas = $conexion->row_affected();
+          }
+          elseif($tipo == 'delete')
+          {
+            $conector->query($query);
+            $filas = $conexion->row_affected();
+          }
+          else
+          {
+            $mensaje = $conector->error_get_last($query)
+          }
+        }
     }
 ?>

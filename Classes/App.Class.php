@@ -12,10 +12,6 @@
                 if(isset($_POST['control']))
                 {
                     $this->controller = $_POST['control'];
-                
-               
-                
-
 
                     if(isset($_POST['metodo']))
                     {
