@@ -12,19 +12,20 @@
                 if(isset($_POST['control']))
                 {
                     $this->controller = $_POST['control'];
-                }
-                else
-                {
-                    //redirect to error
-                }
+                
+               
+                
 
-                if(isset($_POST['metodo']))
-                {
-                    $this->method = $_POST['metodo'];
-                }
-                if(isset($_POST['data']))
-                {
-                    $this->params = $_POST['data'];
+
+                    if(isset($_POST['metodo']))
+                    {
+                       $this->method = $_POST['metodo'];
+                
+                        if(isset($_POST['data']))
+                        {
+                           $this->params = $_POST['data'];
+                        }
+                    }
                 }
             }
     
